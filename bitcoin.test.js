@@ -1,4 +1,4 @@
-describe('bitcoin profti maximisation', () => {
+describe('bitcoin profit maximisation', () => {
   it('returns -1 if there is no profit', () => {
 
   });
