@@ -4,19 +4,28 @@
   "description": "You will be given a list of Bitcoin stock prices for a given day and your goal is to return the maximum profit that could have been made by buying a stock at the given price and then selling the stock later on. For example if the input is: [45, 24, 35, 31, 40, 38, 11] then your program should return 16 because if you bought the stock at $24 and sold it at $40, a profit of $16 was made and this is the largest profit that could be made. If no profit could have been made, return -1.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test",
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/feliun/bitcoin-challenge.git"
+    "url": "git+https://github.com/betisman/bitcoin-challenge.git"
   },
-  "author": "Felipe Polo Ruiz <felipe.polo@gmail.com> (https://github.com/feliun)",
+  "author": "Carlos Jiménez <carlosjimenezgomez@gmail.com> (https://github.com/betisman)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/feliun/bitcoin-challenge/issues"
   },
   "homepage": "https://github.com/feliun/bitcoin-challenge#readme",
   "devDependencies": {
-    "mocha": "^4.0.1"
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "mocha": "^4.0.1",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "expect.js": "^0.3.1"
   }
 }
