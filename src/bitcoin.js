@@ -1,17 +1,15 @@
 module.exports = () => {
-  const maxProfit = (prices) => {
-    const profits = prices.reduce((acc, price) => {
-      if (!acc[price]) acc[price] = -1;
-      Object.keys(acc).map((k) => {
-        if (price - k > acc[k]) acc[k] = price - k;
-        return;
-      });
-      return acc;
-    }, {});
-    // const values = Object.values(profits);
-    const values = Object.keys(profits).map(v => profits[v]);
-    return values.length < 1 ? -1 : Math.max(...values) || -1; // || -1 para devolver -1 cuando profit es 0
-  };
+
+  const maxProfit = prices =>
+    prices.reduce((acc, price) => {
+      const sliced = acc.sliced.slice(1);
+      const max = Math.max(...acc.sliced);
+      return {
+        sliced,
+        // max: (max - price > acc.max ? max - price : acc.max) || -1,
+        max: (max - price > acc.max && max - price) || acc.max || -1,
+      };
+    }, { max: -1, sliced: prices }).max;
 
   return { maxProfit };
 };
